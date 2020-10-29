@@ -15,9 +15,12 @@ $config = [
             'enableConfirmation' => false,
             'enableUnconfirmedLogin' => true,
             'rememberFor' => 25920000,
-            'adminPermission' => [
+            'admins'=>[
                 'admin'
-            ]
+            ],
+            'adminPermission' =>
+                'admin'
+
         ],
     ],
     'aliases' => [
@@ -78,7 +81,8 @@ $config = [
                 '/' => 'site/index',
                 '/login' => '/user/security/login',
                 '/postback.php' => 'site/add',
-                '/get-json' => 'site/get-json'
+                '/get-json' => 'site/get-json',
+                '/user/<controller>/<action>'=>'user/<controller>/<action>'
             ],
         ],
 
