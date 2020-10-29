@@ -82,6 +82,7 @@ $config = [
                 '/login' => '/user/security/login',
                 '/postback.php' => 'site/add',
                 '/get-json' => 'site/get-json',
+                '<controller>/<action>'=>'<controller>/<action>',
                 '/user/<controller>/<action>'=>'user/<controller>/<action>'
             ],
         ],

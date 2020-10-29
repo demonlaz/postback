@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use app\widgets\Alert;
@@ -38,13 +39,11 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
+
+            !Yii::$app->user->isGuest ?
+                ['label' => 'Управления пользователями', 'url' => ['/user/admin/index']]:'',
             Yii::$app->user->isGuest ? (
-            []
-            ) : (
-            ['label' => 'Управления пользователями', 'url' => ['/user/admin/index']]
-            )
-            ,Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+            ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
